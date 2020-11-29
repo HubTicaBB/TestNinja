@@ -36,7 +36,7 @@ namespace TestNinja.UnitTests
         [Test]
         public void CalculateDemeritPoints_SpeedHigherThanSpeedLimit_ReturnDemeritPoints()
         {
-            int result = _demeritPointsCalculator.CalculateDemeritPoints(70);
+            var result = _demeritPointsCalculator.CalculateDemeritPoints(70);
             Assert.That(result, Is.EqualTo(1));
         }
     }
