@@ -22,11 +22,15 @@ namespace TestNinja.UnitTests
         }
 
         [Test]
+        public void Push_ObjectIsNull_AddArgumentToTheStack()
+        {
+            Assert.That(() => _stack.Push(null), Throws.ArgumentNullException);
+        }
+
+        [Test]
         public void Push_ValidArgument_AddArgumentToTheStack()
         {
-            var arg = "abc";
-
-            _stack.Push(arg);
+            _stack.Push("abc");
 
             Assert.That(_stack.Count, Is.EqualTo(1));
         }
