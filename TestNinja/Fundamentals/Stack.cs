@@ -1,10 +1,9 @@
-﻿using NPOI.SS.Formula.Functions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace TestNinja.Fundamentals
 {
-    public class Stack
+    public class Stack<T>
     {
         private readonly List<T> _list = new List<T>();
 
