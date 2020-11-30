@@ -1,8 +1,5 @@
 ﻿using Moq;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TestNinja.Mocking;
 
 namespace TestNinja.UnitTests
@@ -11,13 +8,13 @@ namespace TestNinja.UnitTests
     class VideoServiceTests
     {
         private Mock<IFileReader> _fileReader;
-        private VideoService _service;
+        private VideoService _videoService;
 
         [SetUp]
         public void SetUp()
         {
             _fileReader = new Mock<IFileReader>();
-            _service = new VideoService(_fileReader.Object);
+            _videoService = new VideoService(_fileReader.Object);
         }
 
         [Test]
@@ -25,7 +22,7 @@ namespace TestNinja.UnitTests
         {
             _fileReader.Setup(fr => fr.Read("video.txt")).Returns("");            
 
-            var result = _service.ReadVideoTitle();
+            var result = _videoService.ReadVideoTitle();
 
             Assert.That(result, Does.Contain("error").IgnoreCase);
         }
