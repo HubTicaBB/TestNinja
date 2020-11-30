@@ -22,7 +22,9 @@ namespace TestNinja.UnitTests.Mocking
         [Test]
         public void DownloadInstaller_DownloadFails_ReturnFalse()
         {
-            _fileDownloader.Setup(fd => fd.DownloadFile(It.IsAny<string>(), It.IsAny<string>())).Throws<WebException>();
+            _fileDownloader.Setup(fd => 
+                fd.DownloadFile(It.IsAny<string>(), It.IsAny<string>()))
+                .Throws<WebException>();
 
             var result = _installerHelper.DownloadInstaller("customerName", "installerName");
 
