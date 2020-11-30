@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using TestNinja.Mocking;
 using System.Linq;
 
 namespace TestNinja.Mocking
